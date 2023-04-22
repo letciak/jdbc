@@ -1,7 +1,6 @@
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
-import java.sql.Statement;
 
 public class TesteConexao {
     public static void main(String[] args) throws SQLException {
@@ -11,10 +10,8 @@ public class TesteConexao {
 
         Connection conexao = DriverManager.getConnection(url, usuario, senha);
 
-        Statement stmt = conexao.createStatement();
-        stmt.execute("create database jdbc");
+        System.out.println("conexão realizada com sucesso");
 
-        System.out.println("banco criado com sucesso");
         conexao.close();
     }
 
